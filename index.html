@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Team Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <h1>TEAM GENERATOR</h1>
+        </header>
+        <div class="teams-wrapper">
+            <div class="team-box">TEAM 1</div>
+            <div class="team-box">TEAM 2</div>
+            <div class="team-box">TEAM 3</div>
+            <div class="team-box">TEAM 4</div>
+            <div class="team-box">TEAM 5</div>
+
+        </div>
+        <div class="input-wrapper">
+            <textarea rows='1' form="names-input" placeholder='Enter names here...'></textarea>
+            <form id="names-input" action="">
+                <button>Generate Team</button>
+                <select name="team-size" id="team-size">
+                    <option value="2" selected disabled hidden>Choose a Group Size (Default 2)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </form>
+        </div>
+        <footer>FOOTER</footer>
+    </div>
+
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>

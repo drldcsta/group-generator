@@ -1,0 +1,58 @@
+
+
+.main-wrapper {
+    padding: 10px;
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "h h h h h" "t t t i i" "t t t i i" "t t t i i" "f f f f f";
+}
+
+header {
+    background: blue;
+    grid-area: h;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.teams-wrapper {
+    grid-gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background: red;
+    grid-area: t;
+    height: 80vh;
+    display: grid;
+}
+
+.team-box {
+    background: slateblue;
+    border: 1px solid blue;
+    margin: 2%;
+}
+
+.input-wrapper {
+    background: green;
+    grid-area: i;
+    height: 80vh;
+}
+
+footer {
+    background: yellow;
+    grid-area: f;
+    height: 10vh;
+}
+
+textarea {
+    /* box-sizing: padding-box; */
+    overflow: hidden;
+    /* demo only: */
+    padding: 10px;
+    width: 75%;
+    font-size: 14px;
+    margin: 50px auto;
+    display: block;
+    border-radius: 10px;
+    border: 6px solid #556677;
+}
