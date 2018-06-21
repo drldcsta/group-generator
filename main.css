@@ -1,3 +1,7 @@
+body {
+    background: #386150;
+}
+
 .main-wrapper {
     padding: 10px;
     display: grid;
@@ -6,7 +10,7 @@
 }
 
 header {
-    background: blue;
+    background: #C4B7CB;
     grid-area: h;
     height: 10vh;
     display: flex;
@@ -18,26 +22,26 @@ header {
     grid-gap: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    background: red;
+    background: #BBC7CE;
     grid-area: t;
     height: 80vh;
     display: grid;
 }
 
 .team-box {
-    background: slateblue;
+    background: #BFEDEF;
     border: 1px solid blue;
     margin: 2%;
 }
 
 .input-wrapper {
-    background: green;
+    background: #98E2C6;
     grid-area: i;
     height: 80vh;
 }
 
 footer {
-    background: yellow;
+    background: #545C52;
     grid-area: f;
     height: 10vh;
 }
@@ -59,11 +63,11 @@ textarea {
     header {
         background: slategray;
     }
-   .main-wrapper {
-       padding: 10px;
-       display: grid;
-       min-height: 100vh;
-       grid-template-areas: "h" "i" "t" "f";
-       /* "h h h h h" "t t t i i" "t t t i i" "t t t i i" "f f f f f"; */
-   }
+    .main-wrapper {
+        padding: 10px;
+        display: grid;
+        min-height: 100vh;
+        grid-template-areas: "h" "i" "t" "f";
+        /* "h h h h h" "t t t i i" "t t t i i" "t t t i i" "f f f f f"; */
+    }
 }
