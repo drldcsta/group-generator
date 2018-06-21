@@ -1,21 +1,20 @@
 console.log("looks like we made it")
-
+// aaa,bbb,ccc,ddd,eee,fff,ggg,hhh
 
 const textarea = document.querySelector('textarea');
 const button = document.querySelector('button')
-let teams = 0;
 
 
 //TODO - find a way to set a limit so text area can't overrun it's container
 textarea.addEventListener('keyup', function () {
     const el = this;
-    let textContent = el.value;
+    const textContent = el.value;
     let contentLength = textContent.split("\n").length
     let rows = Number(el.getAttribute("rows"))
     if (textContent.indexOf(",") > 0 || contentLength > rows) {
-        const newContent = textContent.replace(",", "\n");
+        const newContent = textContent.replace(/,/g, "\n");
         el.value = newContent;
-        el.setAttribute("rows", ++rows)
+        el.setAttribute("rows", contentLength)
     } else {
         el.setAttribute("rows", contentLength)
 
