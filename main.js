@@ -3,8 +3,10 @@ console.log("looks like we made it")
 
 const textarea = document.querySelector('textarea');
 const button = document.querySelector('button')
+let teams = 0;
 
 
+//TODO - find a way to set a limit so text area can't overrun it's container
 textarea.addEventListener('keyup', function () {
     const el = this;
     let textContent = el.value;
@@ -19,8 +21,6 @@ textarea.addEventListener('keyup', function () {
 
     }
 });
-
-
 
 
 button.addEventListener('click', function handleSubmit(e) {
@@ -53,5 +53,25 @@ function generateGroups(arr, n) {
         let xxx = shufStuds.splice(0, n);
         groupsArray.push(xxx);
     }
-    return groupsArray;
+    console.log(groupsArray)
+     buildDom(groupsArray);
+}
+
+function buildDom(groupsArray) {
+    const teams = document.querySelector('.teams-wrapper')
+    groupsArray.forEach(group => {
+        let teamBox = document.createElement('div');
+        teamBox.setAttribute('class', 'team-box')
+        group.forEach(person => {
+            let memberWrapper = document.createElement('div')
+            memberWrapper.setAttribute('class', 'member-wrapper')
+            let teamMember = document.createElement('div')
+            teamMember.setAttribute('class','team-member')
+            let memberName = document.createTextNode(person)
+            teamMember.appendChild(memberName)
+            memberWrapper.appendChild(teamMember)
+            teamBox.appendChild(memberWrapper)
+            teams.appendChild(teamBox)
+        });
+    });
 }
