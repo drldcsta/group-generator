@@ -10,11 +10,9 @@ textarea.addEventListener('keyup', function () {
     let textContent = el.value;
     let contentLength = textContent.split("\n").length
     let rows = Number(el.getAttribute("rows"))
-    // console.log(textContent)
     if (textContent.indexOf(",") > 0 || contentLength > rows) {
         const newContent = textContent.replace(",", "\n");
         el.value = newContent;
-        console.log("dogs");
         el.setAttribute("rows", ++rows)
     } else {
         el.setAttribute("rows", contentLength)
