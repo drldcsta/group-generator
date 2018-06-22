@@ -11,7 +11,7 @@ const teams = document.querySelector('.teams-wrapper')
 textarea.addEventListener('keyup', function () {
     const el = this;
     let textContent = el.value;
-    console.log(textContent.split("\n"))
+    // console.log(textContent.split("\n"))
     let contentLength = textContent.split("\n").length
     let rows = Number(el.getAttribute("rows"))
     if (textContent.indexOf(",") > 0 || contentLength > rows) {
