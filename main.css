@@ -1,21 +1,38 @@
 body {
-    background: #386150;
+    background: #5E5757;
 }
 
 .main-wrapper {
     padding: 10px;
     display: grid;
     min-height: 100vh;
-    grid-template-areas: "h h h h h" "t t t i i" "t t t i i" "t t t i i" "f f f f f";
+    /* grid-template-areas: 
+    "h h h h h" 
+    "t t t i i" 
+    "t t t i i" 
+    "t t t i i" 
+    "f f f f f"; */
+      grid-template-areas: 
+    "h h h h h" 
+    "t t t t i" 
+    "t t t t i" 
+    "t t t t i" 
+    "f f f f f";
 }
 
 header {
-    background: #C4B7CB;
+    background: #302929;
+    color: slategray;
     grid-area: h;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-content: center;
+}
+
+header h1 {
+    padding: 0px;
+    margin: 0px;
 }
 
 .teams-wrapper {
@@ -24,7 +41,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background: #BBC7CE;
     grid-area: t;
-    height: 80vh;
+    height: 85vh;
     display: grid;
 }
 
@@ -52,19 +69,38 @@ header {
 .input-wrapper {
     background: #98E2C6;
     grid-area: i;
-    height: 80vh;
+    height: 85vh;
 }
+
+
 
 footer {
-    background: #545C52;
+    background: #302929;
+    color: white;
     grid-area: f;
-    height: 10vh;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between
 }
 
+#branding {
+    color: slategray;
+}
+
+#copywrite {
+    color: slategray;
+}
+
+#copywrite a {
+    color: yellow;
+    text-decoration: none;
+}
+
+#pi {
+    color: red;
+}
 textarea {
-    /* box-sizing: padding-box; */
     overflow: hidden;
-    /* demo only: */
     padding: 10px;
     width: 75%;
     font-size: 14px;
@@ -75,9 +111,7 @@ textarea {
 }
 
 @media(max-width:600px) {
-    header {
-        background: slategray;
-    }
+
     .main-wrapper {
         padding: 10px;
         display: grid;
