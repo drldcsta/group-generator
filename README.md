@@ -18,3 +18,5 @@ TODO:
 * Convince someone else to do the styling
 
 * Add Mozart's Ghost Easter Egg
+
+ * fix issue where team boxes overrun footer on small screen
