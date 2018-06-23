@@ -69,15 +69,35 @@ header h1 {
     padding: 10%;
 }
 
-.team-member {}
 
 .input-wrapper {
     background: #98E2C6;
     grid-area: i;
     height: 85vh;
+    justify-content: center;
 }
 
+#paste-note {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
 
+#paste-note p {
+    margin: 0%;
+}
+
+textarea:not(:placeholder-shown)  + #paste-note{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+}
+
+.button-wrapper {
+    justify-content: center;
+    display: flex;
+    margin: 5px auto;
+}
 
 footer {
     background: #302929;
@@ -109,7 +129,7 @@ textarea {
     padding: 10px;
     width: 75%;
     font-size: 14px;
-    margin: 50px auto;
+    margin: 10px auto;
     display: block;
     border-radius: 10px;
     border: 6px solid #556677;
@@ -119,9 +139,15 @@ textarea {
 
     .main-wrapper {
         padding: 10px;
-        display: grid;
-        min-height: 100vh;
-        grid-template-areas: "h" "i" "t" "f";
+        display: flex;
+        flex-direction: column;
+        /* min-height: 100vh; */
+        /* grid-template-areas: "h" "i" "t" "f"; */
         /* "h h h h h" "t t t i i" "t t t i i" "t t t i i" "f f f f f"; */
     }
+    textarea:not(:placeholder-shown)+#paste-note {
+        opacity: 0;
+        transition: opacity .25s ease-in-out;
+    }
+
 }
