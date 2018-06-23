@@ -49,27 +49,33 @@
         <header>
             <h1>TEAM GENERATOR</h1>
         </header>
-        <div class="teams-wrapper">
 
-        </div>
         <div class="input-wrapper">
-            <textarea rows='1' form="names-input" placeholder='Enter names here...'></textarea>
-            <form id="names-input" action="">
-                <button>Generate Team</button>
+            <div class="button-wrapper">
+                <button>Generate Teams</button>
                 <select name="team-size" id="team-size">
-                    <option value="2" selected disabled hidden>Choose a Group Size (Default 2)</option>
-                    <option value="2">2</option>
+                    <option value="2" selected>Choose a Group Size (Default 2)</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
+            </div>
+            <textarea rows='1' form="names-input" placeholder='Enter names here...'></textarea>
+            <div id="paste-note">
+                <p>You can paste in a comma separated list if you like</p>
+            </div>
+            <form id="names-input" action="">
+
             </form>
         </div>
+        <div class="teams-wrapper">
+
+        </div>
         <footer>
-            <!-- <div class="footer-wrapper"> -->
-                <div id="branding">Crafted with <span id="pi">π</span> by AndAt Industries.</div>
-                <div id="copywrite">©<a href="https://twitter.com/drldcsta" target="_blank\"> drldcsta</a> 2018</div>
-            <!-- </div> -->
+            <div id="branding">Crafted with
+                <span id="pi">π</span> by AndAt Industries.</div>
+            <div id="copywrite">©
+                <a href="https://twitter.com/drldcsta" target="_blank\"> drldcsta</a> 2018</div>
         </footer>
     </div>
 
