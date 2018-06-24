@@ -4,6 +4,7 @@ console.log("looks like we made it")
 const textarea = document.querySelector('textarea');
 const button = document.querySelector('button')
 const teams = document.querySelector('.teams-wrapper')
+const shadow = document.querySelector('#shadow-div')
 
 
 
@@ -67,6 +68,7 @@ function generateGroups(arr, n) {
     }
     // console.log(groupsArray)
     buildDom(groupsArray);
+    buildShadow(groupsArray)
 }
 
 function clearTeams () {
@@ -90,3 +92,31 @@ function buildDom(groupsArray) {
         });
     });
 }
+
+function buildShadow(groupsArray) {
+    console.log(groupsArray);
+    
+    let textArea = document.createElement('textarea')
+    textArea.setAttribute("id","shadow-div")
+    textArea.setAttribute("style","opacity: 0")
+    let textContent = document.createTextNode("")
+    let teamNum = 1
+    textContent.appendData("```\n")
+    textContent.appendData("# Teams\n")
+    groupsArray.forEach(group => {
+        textContent.appendData(`Team ${teamNum}\n`)
+        textContent.appendData(`${group.join(" ")}\n`)
+        teamNum +=1
+    });
+    textContent.appendData("```\n")
+    console.log(textContent)
+    // textArea.value = textContent
+    document.body.appendChild(textArea)
+    let copyText = document.querySelector("#shadow-div")
+    console.log(copyText)
+    copyText.value = textContent.data
+    // debugger
+    copyText.select()
+    document.execCommand("copy")
+}
+
