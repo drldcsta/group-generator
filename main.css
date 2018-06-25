@@ -140,6 +140,32 @@ textarea {
 }
 
 @media(max-width:600px) {
+footer {
+    background: #302929;
+    color: white;
+    grid-area: f;
+    display: flex;
+    justify-content: space-between
+}
+
+.teams-wrapper {
+    grid-gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background: #BBC7CE;
+    grid-area: t;
+    display: grid;
+    background-image: url(./AndAt.svg);
+    background-size: auto;
+}
+    
+
+    .input-wrapper {
+        background: #98E2C6;
+        grid-area: i;
+        height:auto;
+        justify-content: center;
+    }
 
     .main-wrapper {
         padding: 10px;
