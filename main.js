@@ -101,14 +101,12 @@ function buildShadow(groupsArray) {
     textArea.setAttribute("style","opacity: 0")
     let textContent = document.createTextNode("")
     let teamNum = 1
-    textContent.appendData("```\n")
-    textContent.appendData("# Teams\n")
+    textContent.appendData("`Teams`\n")
     groupsArray.forEach(group => {
-        textContent.appendData(`Team ${teamNum}\n`)
+        textContent.appendData(`*Team ${teamNum}*\n`)
         textContent.appendData(`${group.join(" ")}\n`)
         teamNum +=1
     });
-    textContent.appendData("```\n")
     console.log(textContent)
     // textArea.value = textContent
     document.body.appendChild(textArea)
