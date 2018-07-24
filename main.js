@@ -6,10 +6,7 @@ const button = document.querySelector('button')
 const teams = document.querySelector('.teams-wrapper')
 const shadow = document.querySelector('#shadow-div')
 
-
-
-//TODO - find a way to set a limit so text area can't overrun it's container
-textarea.addEventListener('keyup', function () {
+function redrawTextInput() {
     const el = this;
     let textContent = el.value;
     // console.log(textContent.split("\n"))
@@ -24,7 +21,13 @@ textarea.addEventListener('keyup', function () {
         el.setAttribute("rows", contentLength)
 
     }
-});
+}
+
+
+
+//TODO - find a way to set a limit so text area can't overrun it's container
+textarea.addEventListener('keyup', redrawTextInput);
+
 
 
 
@@ -52,6 +55,7 @@ function generateGroups(arr, n) {
             return false
         }
     })
+
     function shuffleArray(sourceArray) {
         for (let i = 0; i < sourceArray.length - 1; i++) {
             let randIndex = i + Math.floor(Math.random() * (sourceArray.length - i));
@@ -61,9 +65,9 @@ function generateGroups(arr, n) {
         }
         return sourceArray;
     }
-    let shufStuds = shuffleArray(arr);
-    while (shufStuds.length > 0) {
-        let xxx = shufStuds.splice(0, n);
+    let shufGroup = shuffleArray(arr);
+    while (shufGroup.length > 0) {
+        let xxx = shufGroup.splice(0, n);
         groupsArray.push(xxx);
     }
     // console.log(groupsArray)
@@ -71,7 +75,7 @@ function generateGroups(arr, n) {
     buildShadow(groupsArray)
 }
 
-function clearTeams () {
+function clearTeams() {
     teams.innerHTML = ""
 }
 
@@ -95,17 +99,17 @@ function buildDom(groupsArray) {
 
 function buildShadow(groupsArray) {
     console.log(groupsArray);
-    
+
     let textArea = document.createElement('textarea')
-    textArea.setAttribute("id","shadow-div")
-    textArea.setAttribute("style","opacity: 0")
+    textArea.setAttribute("id", "shadow-div")
+    textArea.setAttribute("style", "opacity: 0")
     let textContent = document.createTextNode("")
     let teamNum = 1
     textContent.appendData("`Teams`\n")
     groupsArray.forEach(group => {
         textContent.appendData(`*Team ${teamNum}*\n`)
         textContent.appendData(`${group.join(" ")}\n`)
-        teamNum +=1
+        teamNum += 1
     });
     console.log(textContent)
     // textArea.value = textContent
@@ -117,4 +121,3 @@ function buildShadow(groupsArray) {
     copyText.select()
     document.execCommand("copy")
 }
-
